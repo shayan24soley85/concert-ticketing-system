@@ -20,3 +20,9 @@ class timeModel(models.Model):
     locationModel=models.ForeignKey(to=locationModel,on_delete=models.PROTECT)
     startDateTime=models.DateTimeField()
     capacity=models.IntegerField()
+    started=1
+    finished=2
+    sale_open=3
+    cancled=4
+    status_choice=(("started","Ticket sales have started"),("finished","Tickets are sold out"),("sale_open","Tickets are available for sale"),("cancled","The concert has been canceled"))
+    status=models.IntegerField(choices=status_choice)
