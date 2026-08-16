@@ -26,3 +26,5 @@ class timeModel(models.Model):
     cancled=4
     status_choice=(("started","Ticket sales have started"),("finished","Tickets are sold out"),("sale_open","Tickets are available for sale"),("cancled","The concert has been canceled"))
     status=models.IntegerField(choices=status_choice)
+    def __str__(self):
+        return "Time:{}\nConcertName:{}\nLocation:{}".format(self.startDateTime,self.concertModel.Name,self.locationModel.Name)
