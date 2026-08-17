@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.validators import MinLengthValidator
 # Create your models here.
 class concertModel(models.Model):
     Name=models.CharField(max_length=100)
@@ -28,3 +28,26 @@ class timeModel(models.Model):
     status=models.IntegerField(choices=status_choice)
     def __str__(self):
         return "Time:{}\nConcertName:{}\nLocation:{}".format(self.startDateTime,self.concertModel.Name,self.locationModel.Name)
+class userModel(models.Model):
+    Name= models.CharField(max_length=50)
+    Family=models.CharField(max_length=50)
+    GENDER_CHOICES = (
+        ('Male', 'مرد'),
+        ('Female', 'زن'),
+    )
+
+    Name = models.CharField(max_length=100)
+    Family = models.CharField(max_length=100)
+
+    phoneNumber = models.CharField(
+        max_length=11,
+        validators=[MinLengthValidator(11)], 
+        null=True, 
+        blank=True 
+    )
+    
+    gender = models.CharField(
+        max_length=1, 
+        choices=GENDER_CHOICES, 
+    )
+    
