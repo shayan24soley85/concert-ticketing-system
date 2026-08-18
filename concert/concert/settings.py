@@ -126,3 +126,6 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+MEDIA_URL="/Assets/"
+
+MEDIA_ROOT = BASE_DIR / "Assets"

@@ -6,6 +6,7 @@ class ConcertModel(models.Model):
     singer_name=models.CharField(max_length=100)
     Price=models.FloatField()
     Time=models.IntegerField()
+    poster=models.ImageField(upload_to="images/concert/")
     def __str__(self):
         return self.Name
 class LocationModel(models.Model):
@@ -40,7 +41,7 @@ class UserModel(models.Model):
     Name= models.CharField(max_length=50)
     Family=models.CharField(max_length=50)
 
-    
+    profile=models.ImageField(upload_to="images/user/")
     phone_number = models.CharField(
         max_length=11,
         validators=[MinLengthValidator(11)], 
@@ -62,6 +63,7 @@ class TicketModel(models.Model):
     time_model=models.ForeignKey(to=TimeModel,on_delete=models.PROTECT)
     user_model=models.ForeignKey(to=UserModel,on_delete=models.PROTECT)
     amount=models.IntegerField()
+    ticket_image=models.ImageField(upload_to="images/ticket/")
     def total_price(self):
         return self.time_model.concert_model.Price*self.amount
 
