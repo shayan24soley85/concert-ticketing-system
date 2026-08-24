@@ -13,7 +13,7 @@ class ConcertModel(models.Model):
     Price = models.FloatField(verbose_name="قیمت پایه")
     Time = models.IntegerField(verbose_name="مدت زمان (دقیقه)")
     poster = models.ImageField(
-        upload_to="images/concert/", null=True, verbose_name="پوستر کنسرت"
+        upload_to="images/concert/", null=True, blank=True, verbose_name="پوستر کنسرت"
     )
 
     def __str__(self):
