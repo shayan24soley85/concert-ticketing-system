@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpRequest
+from django.http import HttpResponse
 
 
 # Create your views here.
 def concert_list_view(request):
-    return HttpRequest("لیست کنسرت های موجود")
+    return HttpResponse("لیست کنسرت های موجود")
