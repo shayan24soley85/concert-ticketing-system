@@ -2,3 +2,10 @@ p{
     color: blue;
     font-size: 20px;
 }
+.box {
+    background-color: #48c9b0;
+
+    padding: 20px;
+    border-radius: 8px;
+  
+}
