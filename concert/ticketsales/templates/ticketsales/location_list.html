@@ -1,0 +1,25 @@
+{% extends "ticketsales/layout.html" %}
+
+{% block titlepage %}
+لیست لوکیشن ها
+{% endblock %}
+
+{% block main_content %}
+
+{% if location_list %}
+{% for location in location_list %}
+
+<div class="row location mb-4 align-items-center">
+    <div class="col-md-3">
+        {{ location.Name }}
+    </div>
+
+    <div class="col-md-9">
+        {{ location.Address }}
+    </div>
+</div>
+
+{% endfor %}
+{% endif %}
+
+{% endblock %}
