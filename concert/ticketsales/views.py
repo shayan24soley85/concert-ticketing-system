@@ -19,3 +19,8 @@ def location_list_view(request):
     context = {"location_list": locations}
 
     return render(request, "ticketsales/location_list.html", context)
+
+
+def concert_details_view(request, concert_id):
+    # todo
+    pass

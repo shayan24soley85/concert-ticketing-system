@@ -8,7 +8,7 @@
             {% if concert_list %}
             {% for concert in concert_list %}
             <div class="col-md-3 mb-4">
-                <a href="#" style="text-decoration: none; color: inherit;">
+                <a href="/ticketsales/concert/{{ concert.id}}" style="text-decoration: none; color: inherit;">
                     <div class="imageBox">
 
                         {% if concert.poster %}
