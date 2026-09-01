@@ -9,3 +9,19 @@ p{
     border-radius: 8px;
   
 }
+.location {
+    border: 2px dashed #28a745;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.location-header {
+    border: 2px dashed #198754;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #198754;
+}
