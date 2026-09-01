@@ -1,4 +1,52 @@
-{%extends "ticketsales/layout.html"%}
+{% extends "ticketsales/layout.html" %}
+
 {% block titlepage %}
-جزئیات کنسرت
-{%endblock%}
+جزئیات کنسرت {{ concert_details.Name }}
+{% endblock %}
+
+{% block main_content %}
+
+<div class="row mt-4 w-100" style="text-align: right;">
+
+    <div class="col-md-4 mb-4">
+        <div class="imageBox">
+            {% if concert_details.poster %}
+            <img src="{{ concert_details.poster.url }}" class="img-fluid rounded shadow" alt="پوستر">
+            {% else %}
+            <div class="bg-light rounded d-flex align-items-center justify-content-center shadow"
+                style="height: 250px; border: 1px solid #ddd;">
+                <span class="text-muted">بدون تصویر</span>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+
+                <h4 class="mb-4" style="color: #48c9b0;">مشخصات برنامه</h4>
+                <hr>
+
+                <h5 class="mb-3">
+                    <strong>نام کنسرت:</strong>
+                    <span class="text-secondary">{{ concert_details.Name }}</span>
+                </h5>
+
+                <h5 class="mb-3">
+                    <strong>خواننده:</strong>
+                    <span class="text-secondary">{{ concert_details.singer_name }}</span>
+                </h5>
+
+                <h5 class="mb-3">
+                    <strong>مدت زمان:</strong>
+                    <span class="text-secondary">{{ concert_details.Time }} دقیقه</span>
+                </h5>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

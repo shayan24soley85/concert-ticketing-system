@@ -22,5 +22,6 @@ def location_list_view(request):
 
 
 def concert_details_view(request, concert_id):
-    # todo
-    pass
+    concert = ConcertModel.objects.get(pk=concert_id)
+    context = {"concert_details": concert}
+    return render(request, "ticketsales/concert_details.html", context)
