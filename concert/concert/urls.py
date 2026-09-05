@@ -20,14 +20,18 @@ from django.urls import path
 
 from django.conf import settings
 from django.conf.urls.static import static
-from ticketsales.views import concert_list_view
-from ticketsales.views import location_list_view
-from ticketsales.views import concert_details_view
+from ticketsales.views import (
+    concert_list_view,
+    time_list_view,
+    concert_details_view,
+    location_list_view,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("ticketsales/concert/list", concert_list_view),
     path("ticketsales/location/list", location_list_view),
+    path("ticketsales/time/list", time_list_view),
     path("ticketsales/concert/<int:concert_id>", concert_details_view),
 ]
 

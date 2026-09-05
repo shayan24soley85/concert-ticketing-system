@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from ticketsales.models import ConcertModel
+from ticketsales.models import ConcertModel, TimeModel
 from ticketsales.models import LocationModel
 
 
@@ -25,3 +25,10 @@ def concert_details_view(request, concert_id):
     concert = ConcertModel.objects.get(pk=concert_id)
     context = {"concert_details": concert}
     return render(request, "ticketsales/concert_details.html", context)
+
+
+def time_list_view(request):
+    times = TimeModel.objects.all()
+    context = {"time_list": times}
+
+    return render(request, "ticketsales/time_list.html", context)

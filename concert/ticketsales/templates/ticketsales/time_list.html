@@ -1,0 +1,19 @@
+{%extends "ticketsales/layout.html"%}
+{% block titlepage %}
+لیست سانس ها
+{%endblock%}
+
+
+
+{% block main_content%}
+
+{% if time_list %}
+{% for time in time_list %}
+<div class="col-md-3 mb-4">
+    <div>
+        {{ time.concert_model.Name }}
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+{%endblock%}
