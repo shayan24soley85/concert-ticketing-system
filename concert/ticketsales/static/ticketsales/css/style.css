@@ -25,3 +25,32 @@ p{
     font-weight: bold;
     color: #198754;
 }
+.timeBox {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.timeBox:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: #48c9b0;
+}
+
+.timeBox h2 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.timeBox p {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 8px;
+}

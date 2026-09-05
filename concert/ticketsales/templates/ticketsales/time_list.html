@@ -9,10 +9,15 @@
 
 {% if time_list %}
 {% for time in time_list %}
-<div class="col-md-3 mb-4">
-    <div>
-        {{ time.concert_model.Name }}
-    </div>
+<div class="col-md-2">
+    <a href="#" style="text-decoration: none; color: inherit;">
+        <div class="timeBox">
+            <h2>{{ time.concert_model.Name }}</h2>
+            <p>{{ time.concert_model.singer_name }}</p>
+            <p>{{ time.location_model.Name }}</p>
+            <p>{{ time.start_datetime }}</p>
+        </div>
+    </a>
 </div>
 {% endfor %}
 {% endif %}
